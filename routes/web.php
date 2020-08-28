@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('/test', 'TestController@index');
+Route::get('/regency', 'TestController@getRegency')->name('get.regency');

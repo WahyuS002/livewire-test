@@ -13,16 +13,10 @@ class TestController extends Controller
 {
     public function index()
     {
-        // $provinces = Province::all();
-        // $regencies = Regency::all();
-        // $districts = District::all();
-        // $villages = Village::all();
-
         $province = Province::where('name', 'BENGKULU')->first();
         $regency = Regency::where('name', 'KOTA BENGKULU')->first();
         $regency = Regency::where('name', 'KOTA BENGKULU')->first();
 
-        // Get Kabupaten/Kota dari sebuah Provinsi
         $regencies = $province->regencies;
 
         // Get Kecamatan dari sebuah Kabupaten/Kota
@@ -32,5 +26,10 @@ class TestController extends Controller
         $villages = $regency->villages;
 
         return view('pages.test', compact(['regencies', 'districts', 'villages']));
+    }
+
+    public function getRegency()
+    {
+        return 'hello world';
     }
 }
