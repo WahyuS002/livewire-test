@@ -32,7 +32,7 @@
             @endforeach
         </select>
     </div>
-    @if(count($regencies) > 0)
+    @if(count($regencies) > 0)    
         <div class="mb-8">
             <label class="inline-block w-32 font-bold">Regency:</label>
             <select name="regency" wire:model="regency" 
@@ -43,5 +43,17 @@
                 @endforeach
             </select>
         </div>
+    @if(count($districts) > 0)
+        <div class="mb-8">
+            <label class="inline-block w-32 font-bold">District:</label>
+            <select name="district" wire:model="district" 
+                class="p-2 px-4 py-2 pr-8 leading-tight bg-white border border-gray-400 rounded shadow appearance-none hover:border-gray-500 focus:outline-none focus:shadow-outline">
+                <option value=''>Choose a district</option>
+                @foreach($districts as $district)
+                    <option value={{ $district->id }}>{{ $district->name }}</option>
+                @endforeach
+            </select>
+        </div>
+    @endif
     @endif
 </div>

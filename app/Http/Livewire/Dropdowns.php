@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 // use App\City;
 // use App\Country;
 
+use App\Models\District;
 use App\Models\Province;
 use App\Models\Regency;
 use Livewire\Component;
@@ -18,6 +19,9 @@ class Dropdowns extends Component
     public $province;
     public $regencies = [];
     public $regency;
+    public $districts = [];
+    public $district;
+
     // public function mount($country, $city)
     // {
     //     $this->country = $country;
@@ -39,6 +43,9 @@ class Dropdowns extends Component
 
         if (!empty($this->province)) {
             $this->regencies = Regency::where('province_id', $this->province)->get();
+            if (!empty($this->regency)) {
+                $this->districts = District::where('regency_id', $this->regency)->get();
+            }
         }
         return view('livewire.dropdowns', compact('provinces'));
     }
