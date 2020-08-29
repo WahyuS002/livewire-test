@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    // alert()->success('Title', 'Lorem Lorem Lorem');
     return view('welcome');
 });
 
@@ -26,4 +27,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Dropdown
 Route::get('/dropdown', 'HomeController@dropdown');
 
-// Swwetalert
+// Swwetalert [post]
+Route::get('/post', 'PostController@index')->name('post');
+Route::get('/post/create', 'PostController@create')->name('post.create');
+Route::post('/post/storee', 'PostController@store')->name('post.store');

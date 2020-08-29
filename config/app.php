@@ -177,6 +177,7 @@ return [
 
         // Custom
         Khsing\World\WorldServiceProvider::class,
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
 
     ],
 
@@ -230,6 +231,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        // Custom
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
     ],
 
 ];
